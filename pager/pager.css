@@ -1,0 +1,16 @@
+#pager{
+    color: #CCC;
+    font-size: 9px;
+}
+#pager a,
+#pager span.current{
+    height: 21px;
+    line-height: 21px;
+    padding: 0 7px;
+    margin-right: 3px;
+    border: 1px solid #DDD;
+    text-decoration: none;
+}
+#pager a{
+    color: #333;
+}

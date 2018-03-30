@@ -1,0 +1,28 @@
+﻿{
+    "code": 0,
+    "message": "查询成功",
+    "data": {
+        "size": 5,
+        "page": 1,
+        "total": 50,
+        "totalRecord": 50,
+        "list": [
+            {
+                "id": 15,
+                "sysName": "现金宝"
+            }, {
+                "id": 15,
+                "sysName": "现金宝"
+            }, {
+                "id": 15,
+                "sysName": "现金宝"
+            }, {
+                "id": 15,
+                "sysName": "现金宝"
+            }, {
+                "id": 15,
+                "sysName": "现金宝"
+            }
+        ]
+    }
+}
