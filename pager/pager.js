@@ -89,6 +89,9 @@
                 htm+= '<a href="javascript:void(0);" class="nextPage">下一页</a>';
             }
 
+            //指定跳转页
+            htm+= ' 共' + totalRecord + '条，到第 <input type="text" class="pager-search-input" /> 页 <input type="button" class="pager-search-btn" value="确定" />'
+
 			$('#pager').html(htm);
         },
         bindEvent: function(obj){
@@ -110,6 +113,13 @@
 				    self.getData(obj);
                 }
             });
+            $('#pager').on('click', '.pager-search-btn', function(){
+                var pageNum = Number($('.pager-search-input').val());
+				if(pageNum >= 1 && pageNum <= self.options.total){
+                    self.options[obj.pageKey] = pageNum;
+				    self.getData(obj);
+                }
+            });
         },
 
         getData: function(obj){
@@ -120,6 +130,7 @@
 				url: obj.url,
 				data: this.options,
 				success: function(data){
+                    self.options.total = data.data.total;
 					self.createTpl(data.data.total, data.data.totalRecord, obj);
 					obj.cb(data);
 				}
